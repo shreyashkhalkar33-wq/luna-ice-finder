@@ -9,8 +9,56 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VolumeRouteImport } from './routes/volume'
+import { Route as TerrainRouteImport } from './routes/terrain'
+import { Route as RoverRouteImport } from './routes/rover'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as RadarRouteImport } from './routes/radar'
+import { Route as LandingRouteImport } from './routes/landing'
+import { Route as IngestionRouteImport } from './routes/ingestion'
+import { Route as IceDetectionRouteImport } from './routes/ice-detection'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VolumeRoute = VolumeRouteImport.update({
+  id: '/volume',
+  path: '/volume',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerrainRoute = TerrainRouteImport.update({
+  id: '/terrain',
+  path: '/terrain',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoverRoute = RoverRouteImport.update({
+  id: '/rover',
+  path: '/rover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RadarRoute = RadarRouteImport.update({
+  id: '/radar',
+  path: '/radar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandingRoute = LandingRouteImport.update({
+  id: '/landing',
+  path: '/landing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IngestionRoute = IngestionRouteImport.update({
+  id: '/ingestion',
+  path: '/ingestion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IceDetectionRoute = IceDetectionRouteImport.update({
+  id: '/ice-detection',
+  path: '/ice-detection',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +67,144 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ice-detection': typeof IceDetectionRoute
+  '/ingestion': typeof IngestionRoute
+  '/landing': typeof LandingRoute
+  '/radar': typeof RadarRoute
+  '/reports': typeof ReportsRoute
+  '/rover': typeof RoverRoute
+  '/terrain': typeof TerrainRoute
+  '/volume': typeof VolumeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ice-detection': typeof IceDetectionRoute
+  '/ingestion': typeof IngestionRoute
+  '/landing': typeof LandingRoute
+  '/radar': typeof RadarRoute
+  '/reports': typeof ReportsRoute
+  '/rover': typeof RoverRoute
+  '/terrain': typeof TerrainRoute
+  '/volume': typeof VolumeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ice-detection': typeof IceDetectionRoute
+  '/ingestion': typeof IngestionRoute
+  '/landing': typeof LandingRoute
+  '/radar': typeof RadarRoute
+  '/reports': typeof ReportsRoute
+  '/rover': typeof RoverRoute
+  '/terrain': typeof TerrainRoute
+  '/volume': typeof VolumeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ice-detection'
+    | '/ingestion'
+    | '/landing'
+    | '/radar'
+    | '/reports'
+    | '/rover'
+    | '/terrain'
+    | '/volume'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ice-detection'
+    | '/ingestion'
+    | '/landing'
+    | '/radar'
+    | '/reports'
+    | '/rover'
+    | '/terrain'
+    | '/volume'
+  id:
+    | '__root__'
+    | '/'
+    | '/ice-detection'
+    | '/ingestion'
+    | '/landing'
+    | '/radar'
+    | '/reports'
+    | '/rover'
+    | '/terrain'
+    | '/volume'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  IceDetectionRoute: typeof IceDetectionRoute
+  IngestionRoute: typeof IngestionRoute
+  LandingRoute: typeof LandingRoute
+  RadarRoute: typeof RadarRoute
+  ReportsRoute: typeof ReportsRoute
+  RoverRoute: typeof RoverRoute
+  TerrainRoute: typeof TerrainRoute
+  VolumeRoute: typeof VolumeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/volume': {
+      id: '/volume'
+      path: '/volume'
+      fullPath: '/volume'
+      preLoaderRoute: typeof VolumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terrain': {
+      id: '/terrain'
+      path: '/terrain'
+      fullPath: '/terrain'
+      preLoaderRoute: typeof TerrainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rover': {
+      id: '/rover'
+      path: '/rover'
+      fullPath: '/rover'
+      preLoaderRoute: typeof RoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/radar': {
+      id: '/radar'
+      path: '/radar'
+      fullPath: '/radar'
+      preLoaderRoute: typeof RadarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landing': {
+      id: '/landing'
+      path: '/landing'
+      fullPath: '/landing'
+      preLoaderRoute: typeof LandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ingestion': {
+      id: '/ingestion'
+      path: '/ingestion'
+      fullPath: '/ingestion'
+      preLoaderRoute: typeof IngestionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ice-detection': {
+      id: '/ice-detection'
+      path: '/ice-detection'
+      fullPath: '/ice-detection'
+      preLoaderRoute: typeof IceDetectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +217,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  IceDetectionRoute: IceDetectionRoute,
+  IngestionRoute: IngestionRoute,
+  LandingRoute: LandingRoute,
+  RadarRoute: RadarRoute,
+  ReportsRoute: ReportsRoute,
+  RoverRoute: RoverRoute,
+  TerrainRoute: TerrainRoute,
+  VolumeRoute: VolumeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
