@@ -49,9 +49,10 @@ function Page() {
   );
 }
 
-function Tile({ span, title, code, data, cmap }: { span: number; title: string; code: string; data: Float32Array; cmap: any }) {
+function Tile({ span, title, code, data, cmap }: { span: 4 | 8; title: string; code: string; data: Float32Array; cmap: any }) {
+  const cls = span === 8 ? "col-span-12 lg:col-span-8" : "col-span-12 lg:col-span-4";
   return (
-    <div className={`col-span-12 lg:col-span-${span}`}>
+    <div className={cls}>
       <Panel title={title} code={code}>
         <MapCanvas base={{ data, colormap: cmap }} showGrid={false} />
       </Panel>
