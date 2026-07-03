@@ -1,3 +1,5 @@
+<img width="1650" height="720" alt="1000331134" src="https://github.com/user-attachments/assets/d93ffb05-8f51-410f-89e7-45d7b9438b50" />
+<img width="1650" height="720" alt="1000331135" src="https://github.com/user-attachments/assets/e0e44a28-820d-4754-a5c1-28822b301c8a" />
 Absolutely. I can help you build a **competition-level solution** for this ISRO problem statement. This is a substantial project—roughly the equivalent of a small research project—so we'll build it in phases.
 
 ## What we'll create
